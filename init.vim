@@ -1,11 +1,15 @@
+" Automatically install vim-plug if it isn't already
+if empty(glob('"${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim'))
+	silent !curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+
 " Plugins - Using vim-plug
 call plug#begin("~/.config/nvim")
 
 " List of Plugins
-"Plug 'zgpio/tree.nvim'
-"Plug 'scrooloose/nerdtree'
 Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
+Plug 'junegunn/fzf' 
 " End of Plugin List
 call plug#end()
 
@@ -26,5 +30,4 @@ let g:NERDTreeShowHidden = 1
 " remove ? tips
 let g:NERDTreeMinimalUI = 1
 
-" NERD Font Settings
-set guifont=RobotoNormal
+
